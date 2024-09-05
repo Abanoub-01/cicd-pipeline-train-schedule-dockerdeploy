@@ -10,7 +10,7 @@ pipeline {
                 curl -sL https://rpm.nodesource.com/setup_9.x | sudo -E bash -
                 yum install nodejs
                 npm install -g yarn
-                # using -x flag to exclude tasks already done  
+                // using -x flag to exclude tasks already done  
                 sh './gradlew build --no-daemon -x nodeSetup -x npmSetup -x npmInstall -x npm_test -x npm_build'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
