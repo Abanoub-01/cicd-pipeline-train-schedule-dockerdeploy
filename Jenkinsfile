@@ -7,7 +7,7 @@ pipeline {
                 yum -y update
                 yum install java-1.8.0-openjdk
                 yum install -y gcc-c++ make
-                curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+                curl -sL https://rpm.nodesource.com/setup_9.x | sudo -E bash -
                 yum install nodejs
                 npm install -g yarn
                 sh './gradlew build --no-daemon -x nodeSetup -x npmSetup -x npmInstall -x npm_test -x npm_build'
